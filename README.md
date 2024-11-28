@@ -37,7 +37,7 @@ To run this project, you'll need to have Python 3.x installed along with the req
 
 ```bash
 git clone <repository-url>
-
+----------------------------------------------------------------------------------------------------------------------------------
 
 Install the required Python libraries:
 bash
@@ -51,7 +51,8 @@ pip install pandas matplotlib seaborn plotly statsmodels scikit-learn pymongo
 Data Wrangling
 The data is extracted from a MongoDB database. The following steps were performed on the raw data:
 
-MongoDB Connection: A connection was made to a local MongoDB instance using the pymongo library.
+MongoDB Connection:
+ A connection was made to a local MongoDB instance using the pymongo library.
 Data Extraction: The data was retrieved from the "air-quality" database, specifically the "nairobi" collection.
 Data Cleaning: The dataset was cleaned by:
 Filtering the data to include only PM2.5 measurements.
