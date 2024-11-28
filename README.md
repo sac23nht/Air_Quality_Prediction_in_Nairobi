@@ -41,8 +41,8 @@ git clone <repository-url>
 
 Install the required Python libraries:
 bash
-Copy code
 pip install -r requirements.txt
+
 Alternatively, you can manually install the dependencies with pip:
 
 bash
@@ -51,8 +51,10 @@ pip install pandas matplotlib seaborn plotly statsmodels scikit-learn pymongo
 Data Wrangling
 The data is extracted from a MongoDB database. The following steps were performed on the raw data:
 
-MongoDB Connection:
- A connection was made to a local MongoDB instance using the pymongo library.
+Data Wrangling
+The data is extracted from a MongoDB database. The following steps were performed on the raw data:
+
+MongoDB Connection: A connection was made to a local MongoDB instance using the pymongo library.
 Data Extraction: The data was retrieved from the "air-quality" database, specifically the "nairobi" collection.
 Data Cleaning: The dataset was cleaned by:
 Filtering the data to include only PM2.5 measurements.
@@ -64,17 +66,3 @@ Linear Regression
 Data Splitting: The cleaned data was split into training and testing sets.
 Model Training: A Linear Regression model was trained on the training set using the previous hour's PM2.5 reading (P2.L1) as the predictor.
 Evaluation: The model’s performance was evaluated using the Mean Absolute Error (MAE) on both the training and test sets.
-python
-Copy code
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error
-
-# Instantiate and train the model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Calculate MAE
-mae = mean_absolute_error(y_test, y_pred)
