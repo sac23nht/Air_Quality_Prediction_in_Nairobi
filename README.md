@@ -39,30 +39,15 @@ To run this project, you'll need to have Python 3.x installed along with the req
 git clone <repository-url>
 ----------------------------------------------------------------------------------------------------------------------------------
 
-Install the required Python libraries:
+##Install the required Python libraries:
 bash
 pip install -r requirements.txt
 
-Alternatively, you can manually install the dependencies with pip:
+##Alternatively, you can manually install the dependencies with pip:
 
 bash
-Copy code
+##Copy code
 pip install pandas matplotlib seaborn plotly statsmodels scikit-learn pymongo
-Data Wrangling
+##Data Wrangling
 The data is extracted from a MongoDB database. The following steps were performed on the raw data:
 
-Data Wrangling
-The data is extracted from a MongoDB database. The following steps were performed on the raw data:
-
-MongoDB Connection: A connection was made to a local MongoDB instance using the pymongo library.
-Data Extraction: The data was retrieved from the "air-quality" database, specifically the "nairobi" collection.
-Data Cleaning: The dataset was cleaned by:
-Filtering the data to include only PM2.5 measurements.
-Removing outliers where PM2.5 readings exceeded 500.
-Resampling the data on an hourly basis and using forward filling for missing values.
-Feature Engineering: A lag feature was created to incorporate previous PM2.5 readings as a predictor for future values.
-Modeling
-Linear Regression
-Data Splitting: The cleaned data was split into training and testing sets.
-Model Training: A Linear Regression model was trained on the training set using the previous hour's PM2.5 reading (P2.L1) as the predictor.
-Evaluation: The model’s performance was evaluated using the Mean Absolute Error (MAE) on both the training and test sets.
